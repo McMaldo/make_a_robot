@@ -1,0 +1,83 @@
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+@import "tailwindcss";
+body {
+    color: #fff;
+}
+/* tabla de materiales */
+.materials span {
+    border: 1px solid #14635a;
+    border-width: 1px 0 0 0;
+}
+
+/* slider de ensamblado */
+.ensamblaje {
+    margin: auto;
+    margin-top: -3%;
+    width: 90%;
+    padding: 5%;
+}
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ul.slider {
+    position: relative;
+    width: 90vw;
+    height: 400px;
+}
+ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity 0.5s;
+    background: none;
+}
+ul.slider li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3pt;
+}
+ul.slider li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+ul.slider li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+}
+.menu {
+    text-align: center;
+    margin: 2%;
+    margin-top: 4%;
+}
+.menu li {
+    display: inline-block;
+    text-align: center;
+}
+.menu li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border: 2pt #07b7b7 solid;
+    border-radius: 100%;
+}
+.menu li a:hover {
+    border: 2pt #fff solid;
+}
