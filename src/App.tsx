@@ -1,4 +1,5 @@
 import Ensamblaje from "./components/Ensamblaje";
+import Footer from "./components/Footer";
 import Materiales from "./components/Materiales";
 import Piezas from "./components/Piezas";
 
@@ -19,6 +20,7 @@ function App() {
         <h2 className="text-3xl pt-10">Como Ensamblarlo</h2>
         <Ensamblaje />
       </main>
+      <Footer />
     </>
   );
 }

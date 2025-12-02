@@ -2,11 +2,50 @@
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 @import "tailwindcss";
+@theme {
+    --color-main: #14635a;
+
+    --color-bg: #05070d;
+    --color-font: #fff;
+    --color-font-light: #888;
+    --color-icon: #bbb;
+
+    --color-btn: #0e0e1e;
+    --color-btn-hover: #151521;
+    --color-btn-border: #555;
+}
+
+[data-theme="light"] {
+    --color-main: #14635a;
+
+    --color-bg: #f5f5f5;
+    --color-font: #111;
+    --color-font-light: #777;
+    --color-icon: #999;
+
+    --color-btn: #e9e9e9;
+    --color-btn-hover: #ddd;
+    --color-btn-border: #cccccc;
+}
+
 body {
-    color: #fff;
+    color: var(--color-font);
 }
 /* tabla de materiales */
 .materials span {
-    border: 1px solid #14635a;
+    border: 1px solid var(--color-main);
     border-width: 1px 0 0 0;
+}
+
+.fa-icon {
+    fill: var(--color-icon);
+}
+
+.tech-icon.Bash,
+.tech-icon.Github,
+.tech-icon.MySQL,
+.tech-icon.Notion,
+.tech-icon.ExpressJS,
+.tech-icon.Vercel {
+    fill: var(--color-font);
 }

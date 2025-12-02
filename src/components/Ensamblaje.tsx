@@ -20,7 +20,7 @@ export default function Ensamblaje() {
         {pasos.map((txt, index) => (
           <li
             key={index}
-            className={`absolute top-0 left-0 w-full aspect-video flex flex-col justify-end rounded-xl overflow-hidden border border-teal-700 bg-black transition-all duration-500 ${activeSlide == index + 1 ? "opacity-100 z-1" : "opacity-0 z-0"}`}
+            className={`absolute top-0 left-0 w-full aspect-video flex flex-col justify-end rounded-xl overflow-hidden border border-main bg-black transition-all duration-500 ${activeSlide == index + 1 ? "opacity-100 z-1" : "opacity-0 z-0"}`}
           >
             <img
               src={`img/paso${index + 1}.png`}
@@ -36,7 +36,7 @@ export default function Ensamblaje() {
         {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
           <button
             key={index}
-            className={`grid place-items-center aspect-square rounded-full size-12 border border-teal-700 cursor-pointer text-lg ${activeSlide == num ? "bg-teal-700 text-black font-bold" : "bg-transparent"} transition-colors`}
+            className={`grid place-items-center aspect-square rounded-full size-12 border border-main cursor-pointer text-lg ${activeSlide == num ? "bg-main text-black font-bold" : "bg-transparent"} transition-colors`}
             onClick={() => setActiveSlide(num)}
           >
             {num}
