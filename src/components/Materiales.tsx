@@ -1,6 +1,6 @@
 export default function Materiales() {
   return (
-    <section className="materials grid grid-cols-['1fr_min-content'] w-fill max-w-150 border border-teal-700 p-4 rounded-lg">
+    <section className="materials grid grid-cols-['1fr_min-content'] w-fill max-w-150 border border-teal-700 p-4 rounded-xl">
       <div className="text-xl">Pieza</div>
       <div className="text-xl">Cantidad</div>
       <div className="text-xl col-span-2 pt-4 text-gray-400">Para imprimir</div>

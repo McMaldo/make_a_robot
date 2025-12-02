@@ -1,3 +1,4 @@
+import Ensamblaje from "./components/Ensamblaje";
 import Materiales from "./components/Materiales";
 import Piezas from "./components/Piezas";
 
@@ -15,7 +16,8 @@ function App() {
         <Piezas />
         <h2 className="text-3xl pt-10">Materiales para Ensamblar</h2>
         <Materiales />
-        {/*<h2>Como Ensamblarlo</h2>*/}
+        <h2 className="text-3xl pt-10">Como Ensamblarlo</h2>
+        <Ensamblaje />
       </main>
     </>
   );

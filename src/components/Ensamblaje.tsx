@@ -1,72 +1,48 @@
+import { useState } from "react";
+
 export default function Ensamblaje() {
+  const pasos: string[] = [
+    "atornillar las placas arduino y L298 al techo",
+    "colocar los sensores seguidores de linea a la base",
+    "atornillar los motores a los laterales de la base",
+    "colocar la bateria encima de la base",
+    "encastrar el techo a la base",
+    "conectar los cables requeridos",
+    "encastrar las ruedas a los motores",
+    "ya se encuentra listo para cargar el codigo",
+  ];
+
+  const [activeSlide, setActiveSlide] = useState(1);
+
   return (
-    <section className="ensamblaje">
-      <ul className="slider">
-        <li id="slide1">
-          <h3>
-            Una vez que ya tenemos todos los materiales necesarios empazamos
-          </h3>
-          <h3>Pasos a seguir:</h3>
-        </li>
-        <li id="slide2">
-          <img src="img/paso1.png" />
-          atornillar las placas arduino y L298 al techo
-        </li>
-        <li id="slide3">
-          <img src="img/paso2.png" />
-          colocar los sensores seguidores de linea a la base
-        </li>
-        <li id="slide4">
-          <img src="img/paso3.png" />
-          atornillar los motores a los laterales de la base
-        </li>
-        <li id="slide5">
-          <img src="img/paso4.png" />
-          colocar la bateria encima de la base
-        </li>
-        <li id="slide6">
-          <img src="img/paso5.png" />
-          encastrar el techo a la base
-        </li>
-        <li id="slide7">
-          <img src="img/paso6.png" />
-          conectar los cables requeridos
-        </li>
-        <li id="slide8">
-          <img src="img/paso7.png" />
-          encastrar las ruedas a los motores
-        </li>
-        <li id="slide9">
-          <img src="img/paso8.png" />
-          ya se encuentra listo para cargar el codigo
-        </li>
+    <section className="w-full flex flex-col items-center">
+      <ul className="slider w-full aspect-video relative">
+        {pasos.map((txt, index) => (
+          <li
+            key={index}
+            className={`absolute top-0 left-0 w-full aspect-video flex flex-col justify-end rounded-xl overflow-hidden border border-teal-700 bg-black transition-all duration-500 ${activeSlide == index + 1 ? "opacity-100 z-1" : "opacity-0 z-0"}`}
+          >
+            <img
+              src={`img/paso${index + 1}.png`}
+              className="size-full object-cover select-none"
+            />
+            <span className="abosolute bottom-0 left-0 p-2 capitalize">
+              Paso {index + 1}: {txt}
+            </span>
+          </li>
+        ))}
       </ul>
-      <ul className="menu">
-        <li>
-          <a href="#slide2">1</a>
-        </li>
-        <li>
-          <a href="#slide3">2</a>
-        </li>
-        <li>
-          <a href="#slide4">3</a>
-        </li>
-        <li>
-          <a href="#slide5">4</a>
-        </li>
-        <li>
-          <a href="#slide6">5</a>
-        </li>
-        <li>
-          <a href="#slide7">6</a>
-        </li>
-        <li>
-          <a href="#slide8">7</a>
-        </li>
-        <li>
-          <a href="#slide9">8</a>
-        </li>
-      </ul>
+      <div className="p-4 flex gap-2 flex-wrap justify-center">
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
+          <button
+            key={index}
+            className={`grid place-items-center aspect-square rounded-full size-12 border border-teal-700 cursor-pointer text-lg ${activeSlide == num ? "bg-teal-700 text-black font-bold" : "bg-transparent"} transition-colors`}
+            onClick={() => setActiveSlide(num)}
+          >
+            {num}
+          </button>
+        ))}
+      </div>
     </section>
   );
 }
